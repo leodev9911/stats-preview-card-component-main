@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Stats preview card component</title>
+  <style>
+    :root {
+      /* Primary */
+      --very-dark-blue-main-background: hsl(233, 47%, 7%);
+      --dark-desaturated-blue-card-background: hsl(244, 38%, 16%);
+      --soft-violet-accent: rgb(170, 92, 219);
+
+      /* Neutral */
+      --white-main-heading-stats: hsl(0, 0%, 100%);
+      --slightly-transparent-white-main-paragraph: hsla(0, 0%, 100%, 0.75);
+      --slightly-transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+    }
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html {
+      font-size: 62.5%;
+      font-family: 'Inter', sans-serif;
+      /* font-family: 'Lexend Deca', sans-serif; */
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      background-color: var(--very-dark-blue-main-background);
+    }
+    .card__container {
+      width: 86%;
+      max-width: 330px;
+      height: 90%;
+      max-height: 700px;
+      background-color: var(--dark-desaturated-blue-card-background);
+      border-radius: 10px;
+    }
+    .card__container .img__container {
+      position: relative;
+      width: 100%;
+      height: 36%;
+      max-height: 220px;
+      border-radius: 10px 10px 0px 0px;
+    }
+    .card__container .img__container .background-color-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background-color: rgb(170, 92, 219, 0.5);
+      border-radius: 10px 10px 0px 0px;
+      z-index: 1;
+    }
+    .card__container .img__container img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px 10px 0px 0px;
+    }
+    .card__container .text__container {
+      width: 100%;
+      height: 64%;
+      padding: 28px;
+      text-align: center;
+    }
+    .card__container .text__container .h1-p__container {
+      margin-bottom: 22px;
+    }
+    .card__container .text__container .h1-p__container h1 {
+      font-size: 2.4rem;
+      color: white;
+      margin-bottom: 14px;
+    }
+    .card__container .text__container .h1-p__container h1 span {
+      color: var(--soft-violet-accent);
+    }
+    .card__container .text__container .h1-p__container .p__container {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+      font-weight: 500;
+      color: var(--slightly-transparent-white-main-paragraph);
+    }
+    .card__container .stats__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 58%;
+    }
+    .card__container .stats__container .number-containers {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+    .card__container .stats__container .number-containers:nth-child(3) {
+      margin: 0;
+    }
+    .card__container .stats__container .number-containers p {
+      margin-bottom: 4px;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--white-main-heading-stats);
+    }
+    .card__container .stats__container .number-containers .text-p {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--slightly-transparent-white-stat-headings);
+    }
+    @media (min-width: 1020px) {
+      .card__container {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 80%;
+        max-width: 1000px;
+        height: 450px;
+        border-radius: 10px;
+      }
+      .card__container .img__container {
+        width: 48%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
+        border-radius: 0px 10px 10px 0px;
+      }
+      .card__container .img__container img {
+        width: 100%;
+        height: 100%;       
+        border-radius: 0px 10px 10px 0px;
+      }
+      .card__container .img__container .background-color-image {
+        border-radius: 0px 10px 10px 0px;
+      }
+      .card__container .text__container {
+        width: 52%;
+        height: 100%;
+        padding: 64px;
+        text-align: start;
+      }
+
+      .card__container .text__container .h1-p__container {
+        margin-bottom: 76px;
+      }
+     
+      .card__container .text__container .h1-p__container h1 {
+        font-size: 3.2rem;
+        margin-bottom: 22px;
+      }
+      .card__container .stats__container {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="card__container">
+    <figure class="img__container">
+      <img src="./images/image-header-mobile.jpg" alt="">
+      <div class="background-color-image"></div>
+    </figure>
+    <div class="text__container">
+      <div class="h1-p__container">
+        <h1>Get <span>insights</span> that help your business grow.</h1>
+        <p class="p__container">Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall efficiency.</p>
+      </div>
+      <div class="stats__container">
+        <div class="number-containers">
+          <p>10k+</p>
+          <p class="text-p">COMPANIES</p>
+        </div>
+        <div class="number-containers">
+          <p>314</p>
+          <p class="text-p">TEMPLATES</p>
+        </div>
+        <div class="number-containers">
+          <p>12M+</p>
+          <p class="text-p">QUERIES</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
